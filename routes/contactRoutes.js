@@ -7,6 +7,11 @@ router.get('/', (req, res) => {
     res.status(200).json({message : "get all contacts"});
 })
 
+router.get('/:id', (req, res) => {
+
+    res.status(200).json({message: `get the contact with id ${req.params.id}`});
+})
+
 router.post('/', (req, res) => {
 
     res.status(200).json({message :" i am in post"});
