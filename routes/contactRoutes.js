@@ -1,31 +1,17 @@
 const express = require('express');
 
 const router = express.Router();
+const {getContact,getContacts,createContact,updateContact,deleteContact} = require('../controllers/contactController')
 
-router.get('/', (req, res) => {
+router.get('/', getContacts);
 
-    res.status(200).json({message : "get all contacts"});
-})
+router.get('/:id', getContact)
 
-router.get('/:id', (req, res) => {
+router.post('/',createContact )
 
-    res.status(200).json({message: `get the contact with id ${req.params.id}`});
-})
+router.put('/:id', updateContact)
 
-router.post('/', (req, res) => {
-
-    res.status(200).json({message :" i am in post"});
-})
-
-router.put('/:id', (req, res) => {
-
-    res.status(200).json({message: `update the contact with id ${req.params.id}`});
-})
-
-router.delete('/:id', (req, res) => {
-
-    res.status(200).json({message : `delete the contact with id ${req.params.id}`});
-})
+router.delete('/:id',deleteContact)
 
 
 module.exports = router;
