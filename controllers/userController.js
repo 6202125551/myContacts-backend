@@ -57,6 +57,7 @@ const loginUser =  asyncHandler(async (req, res) => {
         res.status(401);
         throw new Error('Email or Password is not valid!!')
     }
+
 })
 
 const currentUser =  asyncHandler(async (req, res) => {
